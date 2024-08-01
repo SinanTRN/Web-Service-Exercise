@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using hello_web_api.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace hello_web_api.Controllers
 {
@@ -7,9 +8,12 @@ namespace hello_web_api.Controllers
     public class HomeController : ControllerBase
     {
         [HttpGet]
-        public String GetMessage()
+        public ResponseModel GetMessage()
         {
-            return "Hello ASP.NET Core Web API";
+            return new ResponseModel() {
+                HttpStatus = 200,
+                Message = "Hello ASP.NET Core Web API"
+            };
         }
     }
 }
