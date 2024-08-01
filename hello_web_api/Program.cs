@@ -8,11 +8,13 @@ namespace hello_web_api
             // Service(Container)
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.SwaggerGen();
+            builder.Services.AddSwaggerGen();
 
 
             var app = builder.Build();
 
+            app.UseSwagger();
+            app.UseSwaggerUI();
             //app.MapGet("/", () => "Hello World!");
 
             app.Run();
