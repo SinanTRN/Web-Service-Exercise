@@ -15,6 +15,7 @@ namespace hello_web_api
 
             app.UseSwagger();
             app.UseSwaggerUI();
+            app.MapControllers();
             //app.MapGet("/", () => "Hello World!");
 
             app.Run();
